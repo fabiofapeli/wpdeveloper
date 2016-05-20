@@ -76,8 +76,8 @@ class FPL_Subscriber{
 		$sql = "SELECT user_email FROM $table_user u INNER JOIN $table_subscriber s ON u.ID=s.user_ID WHERE s.post_ID = '$post_id' AND s.user_ID!='$user_id'";
 		$posts=$wpdb->get_results($sql);
 		foreach ($posts as $p) {
-				//wp_mail($p->user_email,'Notificação de comentários',$message);
-				$wpdb->insert( 'wp_mail', array( 'destinatario' => $p->user_email, 'assunto' => 'Notificação de comentários', 'mensagem' =>$message) );
+				wp_mail($p->user_email,'Notificação de comentários',$message);
+				//$wpdb->insert( 'wp_mail', array( 'destinatario' => $p->user_email, 'assunto' => 'Notificação de comentários', 'mensagem' =>$message) );
 		}
 
 	}
