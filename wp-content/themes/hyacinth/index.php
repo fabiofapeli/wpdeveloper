@@ -8,7 +8,8 @@ if(is_home()){
     echo the_title();
 }
 */
-get_header();?>
+get_header();
+?>
         <div id="three-column" class="container">
             <div><span class="arrow-down"></span></div>
             <div id="tbox1"> 
@@ -35,7 +36,8 @@ get_header();?>
         </div>
         <div id="wrapper3">
             <div id="portfolio" class="container">
-                <?php if(!is_home()){ ?>
+                <?php 
+                if(!is_home()){ ?>
                 <div class="title">
                     <h2>Design Portfolio</h2>
                 </div>
