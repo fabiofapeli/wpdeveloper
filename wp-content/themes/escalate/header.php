@@ -23,7 +23,8 @@
 	<div id="menu">
 		<?php    
 			$args = array(
-				'theme_location' => 'menu-header'
+				'theme_location' => 'menu-header',
+				'walker'		 => new KDM_Menu_Walker()
 			);
 		
 			wp_nav_menu( $args ); ?>

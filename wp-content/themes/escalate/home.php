@@ -28,10 +28,12 @@ $posts = get_posts( 'posts_per_page=5' ); //recuperar os últimos 5 posts public
                             while ($slides->have_posts()) {
                                $slides->the_post();
                                global $post;
+                               $url = get_post_meta( $post->ID, 'url', true );
+                               if(!$url) $url='#';
                                ?>
                             <li>
-                                <a href="#" class="image image-full">
-                                    <?php the_post_thumbnail('full'); ?>
+                                <a href="<?php echo $url; ?>" class="image image-full">
+                                    <?php the_post_thumbnail('feature'); ?>
                                     <span><?php echo $post->post_content; ?></span>
                                 </a>
                             </li>
@@ -55,7 +57,7 @@ $posts = get_posts( 'posts_per_page=5' ); //recuperar os últimos 5 posts public
                                 get_permalink(),
                                 get_the_title());
                                  ?></h3>
-                                <?php the_post_thumbnail(); ?>
+                                <?php the_post_thumbnail('photo-thumb'); ?>
                                 <?php the_excerpt(); ?>
                             </li>
                                 <?php

@@ -1,8 +1,18 @@
-<?php get_header(); 
+<?php 
+
+get_header(); 
 
 the_post();
 global $post;
 $thumb_id = (int) get_post_thumbnail_id();
+
+$meta = get_post_meta( $post->ID, 'add-info', true );
+$meta_labels = array(
+    'date' => 'Data de criação',
+    'size'  => 'Tamanho',
+    'techs' => 'Técnicas',
+    'price' => 'Preço'
+    );
 
 $images = get_posts( //Recupera todas as imagens anexa ao posts
     array(
@@ -20,11 +30,11 @@ $images = get_posts( //Recupera todas as imagens anexa ao posts
                         <?php if (has_post_thumbnail()) { //verificamos se há imagem destacada para listar todas
                            ?>
                         <li>
-                            <?php the_post_thumbnail('full'); //imagem destacada ?>
+                            <?php the_post_thumbnail('photo-full'); //imagem destacada ?>
                             <ul class="photos-album">
                                 <?php //laço para exibir todas imagens do post
                                 foreach($images as $image){
-                                list($src, $alt) = get_image_data($image, 'thumbnail'); //função em custom.php irá recuperar alt e src do thumbnail 
+                                list($src, $alt) = get_image_data($image, 'photo-thumb'); //função em custom.php irá recuperar alt e src do thumbnail 
                                 printf(
                                     '<li><a href="%s" title="%s"><img alt="%s" src="%s"></a></i>',
                                     wp_get_attachment_url( $image->ID), //pega url da imagem full
@@ -34,7 +44,6 @@ $images = get_posts( //Recupera todas as imagens anexa ao posts
                                     );
                                 }
                                  ?>
-                                
                             </ul>
                         </li>
                         <?php
@@ -42,12 +51,19 @@ $images = get_posts( //Recupera todas as imagens anexa ao posts
                         
                         <li>
                             <h1><?php the_title(); ?></h1>
-                            <ul class="photos-info">
-                                <li><strong>Date:</strong> 08 January 2014</li>
-                                <li><strong>Size:</strong> 1'8"</li>
-                                <li><strong>Techinique:</strong> Oil</li>
-                                <li><strong>Price:</strong> US$ 45.00</li>
-                            </ul>
+                            <?php 
+                            
+                            if(is_array($meta)){
+                                echo '<ul class="photos-info">';
+                                foreach ($meta as $k => $v) {
+                                    $price = ($k=='price') ? number_format($v, 2, ',', '') : $v ;
+                                    printf('<li><strong>%s:</strong> %s</li>',
+                                        $meta_labels[$k],
+                                        $price);
+                                }
+                                echo '</ul>';
+                            }
+                             ?>
                             <p><?php the_content(); ?></p>
                         </li>
                     </ul>
