@@ -1,4 +1,9 @@
 <?php
+/*
+Arquivo responsável por processar todas as requisições Ajax
+*/
+
+
 /**
  * WordPress AJAX Process Execution.
  *
@@ -25,8 +30,8 @@ require_once( dirname( dirname( __FILE__ ) ) . '/wp-load.php' );
 send_origin_headers();
 
 // Require an action parameter
-if ( empty( $_REQUEST['action'] ) )
-	die( '0' );
+if ( empty( $_REQUEST['action'] ) ) //Verifica se o dado action foi passado na requisição
+	die( '0' );						// caso não tenha sido passado exibe erro
 
 /** Load WordPress Administration APIs */
 require_once( ABSPATH . 'wp-admin/includes/admin.php' );
@@ -69,6 +74,10 @@ $core_actions_post = array(
 $core_actions_post[] = 'wp-fullscreen-save-post';
 
 // Register core Ajax calls.
+/*
+Executa um gancho referente ao parâmetro passado em action
+*/
+
 if ( ! empty( $_GET['action'] ) && in_array( $_GET['action'], $core_actions_get ) )
 	add_action( 'wp_ajax_' . $_GET['action'], 'wp_ajax_' . str_replace( '-', '_', $_GET['action'] ), 1 );
 
@@ -86,7 +95,7 @@ if ( is_user_logged_in() ) {
 	 *
 	 * @since 2.1.0
 	 */
-	do_action( 'wp_ajax_' . $_REQUEST['action'] );
+	do_action( 'wp_ajax_' . $_REQUEST['action'] ); //acão caso o usuário esteja logado no sistema
 } else {
 	/**
 	 * Fires non-authenticated AJAX actions for logged-out users.
@@ -96,7 +105,7 @@ if ( is_user_logged_in() ) {
 	 *
 	 * @since 2.8.0
 	 */
-	do_action( 'wp_ajax_nopriv_' . $_REQUEST['action'] );
+	do_action( 'wp_ajax_nopriv_' . $_REQUEST['action'] ); //acão caso o usuário não esteja logado no sistema
 }
 // Default status
 die( '0' );

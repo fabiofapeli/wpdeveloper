@@ -1,0 +1,87 @@
+*** Lingonberry changelog ***
+
+
+Version 1.15 (2013-08-17)
+------------------------- 
+* Fixed a bug with content-audio (thanks @mbaker000!)
+
+
+Version 1.14 (2013-08-11)
+------------------------- 
+* Fixed size and positioning of the format-status icon
+
+
+Version 1.13 (2013-08-11)
+------------------------- 
+* Improved header search form
+* Minor bug fixes
+
+
+Version 1.12 (2013-08-11)
+------------------------- 
+* Added Swedish to /languages/
+* Fixed a CSS bug at max-width: 600px
+
+
+Version 1.11 (2013-08-11)
+------------------------- 
+* Fixed styling of some form elements
+
+
+Version 1.10 (2013-08-11)
+------------------------- 
+* Added default widgets that are displayed when no widgets have been selected.
+
+
+Version 1.09 (2013-08-10)
+------------------------- 
+* Improved pingback styling
+
+
+Version 1.08 (2013-08-10)
+------------------------- 
+* Fixed pingback bug in comments.php
+
+
+Version 1.07 (2013-08-08)
+------------------------- 
+* Changed styling of widget-less footer
+* Added Theme URI to theme info
+* Code cleaning and optimization
+
+
+Version 1.06 (2013-08-08)
+------------------------- 
+* Fixed so that the footer is hidden if there are no widgets
+
+
+Version 1.05 (2013-07-31)
+------------------------- 
+* Added slug to wp_enqueue_style
+
+
+Version 1.04 (2013-07-31)
+------------------------- 
+* Bug fixes
+* Updated readme.txt with correct license information for FitVids.js
+
+
+Version 1.03 (2013-07-28)
+------------------------- 
+* Bug fixes
+* Switched icon set from Entypo to Font Awesome, which is GPL 2.0 compatible
+
+
+Version 1.02 (2013-07-25)
+------------------------- 
+* Improved credits link in footer.php
+
+
+Version 1.01 (2013-07-25)
+------------------------- 
+* Bug fixes 
+* Added license.txt, readme.txt and changelog.txt
+
+
+Version 1 (2013-07-24)
+-------------------------

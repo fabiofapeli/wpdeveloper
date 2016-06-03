@@ -15,7 +15,7 @@
 				PW_URL,
 				PW_SITE_NAME);
 				 ?></h1>
-				<p><?php bloginfo('description'); ?></p>
+				<p>BLog info: <?php bloginfo('description'); ?></p>
 			</div>
 		</div>
 	</div>
