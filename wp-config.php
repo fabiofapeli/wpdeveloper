@@ -18,6 +18,7 @@
  * @package WordPress
  */
 
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'wordpress');
@@ -46,6 +47,10 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
+/*
+Outro ponto interessante é que o arquivo wp-config.php sugere a utilização de um site https://api.wordpress.org/secret-key/1.1/salt/ para atualização das secret keys, que correspondem a chaves de segurança e autenticação e todo tipo de criptografia.
+*/
+
 define('AUTH_KEY',         'X{;Pac95[3`V$JYuQv+MszaE4U /~kI-}^~ Ta?m3.|Ag|nx_U?5H{j#b~;f^_rI');
 define('SECURE_AUTH_KEY',  '~Mju(-!5[uavwd%:mI{!5bqkMG)@(BCplVY0lDU)n~BvSN?6>5%MEG<oh^/bsbPq');
 define('LOGGED_IN_KEY',    'V!%Hl`4L%g+i@Yw(v/M%CKG@}6jMCkjEC]irV{LfPNn9 z#m}Ov:U,Nj];M%ENhk');
@@ -63,6 +68,11 @@ define('NONCE_SALT',       'UR55Wtc9pqq3O]sBniLwMA/Pq;hR@c<w!}fPnc2HraQ:W~C-x/3y
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
+
+/*
+A respeito do prefixo das tabelas, o ideal é sempre utilizar um prefixo diferente do 'wp_' a fim de evitar acesso indevido as tabelas, já que o prefixo padrão do WP é de conhecimento geral.
+*/
+
 $table_prefix  = 'wp_';
 
 /**
@@ -77,7 +87,23 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
+
+/*
+Em relação a depuração é altamente recomendável manter a WP_DEBUG como false em ambiente de produção
+*/
+
 define('WP_DEBUG', false);
+
+/*
+Porém em ambiente de desenvolvimento podemos ativas outras formas de depuração
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', true);
+
+Outra atitude importante é bloquear a opção de edição de plugins e temas do wordpress, através da constante DISALLOW_FILE_EDIT
+*/
+define('DISALLOW_FILE_EDIT', true);
+
 
 /* That's all, stop editing! Happy blogging. */
 
