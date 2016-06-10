@@ -104,6 +104,8 @@ Outra atitude importante é bloquear a opção de edição de plugins e temas do
 */
 define('DISALLOW_FILE_EDIT', true);
 
+define('WP_POST_REVISIONS', 2); //Limita número de revisões
+//define('WP_POST_REVISIONS', false); //Cancela revisões
 
 /* That's all, stop editing! Happy blogging. */
 
