@@ -255,33 +255,33 @@ class KDM_Products_List_Table extends WP_List_Table
                 if ( !$id ) { // Novo produto
                     // Para inclusão podemos usar $wpdb->query, porém optaremos pela função específica $wpdb->insert
                     $wpdb->insert(
-                        $wpdb->products,
-                        array(
+                        $wpdb->products, // Nome da tabela
+                        array( // Array associativo com campos
                             'title' => $title,
                             'price' => $price
                         ),
-                        array(
-                            '%s',
-                            '%f'
+                        array( // formato de cada campo
+                            '%s', // string
+                            '%f' // float
                         )
                     );
                     $msg = 'Produto inserido com sucesso!';
                 } else { // Edição de produto
                     // Para edição podemos usar $wpdb->query, porém optaremos pela função específica $wpdb->update
                     $wpdb->update(
-                        $wpdb->products,
-                        array(
+                        $wpdb->products,  // Nome da tabela
+                        array( // Array associativo com campos
                             'title' => $title,
                             'price' => $price
                         ),
-                        array(
+                        array( // Campos de comparação, cláusula WHERE
                             'id' => $id
                         ), 
-                        array(
+                        array( // formato dos campos
                             '%s',
                             '%f'
                         ),
-                        array(
+                        array( // formato das comparações da cláusula WHERE
                             '%d'
                         )
                     );
@@ -290,10 +290,10 @@ class KDM_Products_List_Table extends WP_List_Table
             }
             
             if ( !isset( $error ) ) {
-                $msg_class = 'updated';
+                $msg_class = 'updated'; // Mensagem de sucesso
             } else {
                 $msg = $error;
-                $msg_class = 'error';
+                $msg_class = 'error'; // Mensagem de erro
             }
         }
         
