@@ -1,0 +1,440 @@
+/*
+Theme Name:     Supermoon
+Theme URI:      http://socialmediapower.com/themes
+Description:    Enchanting and clean Twenty Ten child theme with original supermoon headers and nice Google web script font. Custom headers and formatted side and footer widget areas.
+Author:         deltina
+Author URI:     http://deltina.com/about/
+Template:       twentyten
+Version:        1.0
+Tags: black, blue, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
+
+*/
+
+@import url("../twentyten/style.css");
+
+
+/* =Layout
+-------------------------------------------------------------- */
+
+#content {
+	margin: 0 300px 0 20px;
+}
+#primary,
+#secondary {
+	float: right;
+        padding: 9px;
+        padding-top: 20px;
+        margin: -20px 0 0 0;
+	overflow: hidden;
+        display:block;
+	width: 220px;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+}
+
+/* =Fonts
+-------------------------------------------------------------- */
+body,
+input,
+textarea,
+.page-title span,
+.pingback a.url {
+	font-family: Arial, "Bitstream Charter", serif;
+}
+h3#comments-title,
+h3#reply-title,
+#access .menu,
+#access div.menu ul,
+#cancel-comment-reply-link,
+.form-allowed-tags,
+#site-info,
+#site-title,
+#wp-calendar,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+.entry-meta,
+.entry-title,
+.entry-utility,
+#respond label,
+.navigation,
+.page-title,
+.pingback p,
+.reply,
+.widget-title,
+.wp-caption-text,
+input[type=submit] {
+	font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+/* =Structure
+-------------------------------------------------------------- */
+
+/* The main theme structure */
+#access .menu-header,
+div.menu,
+#colophon,
+#branding,
+#main,
+#wrapper {
+	margin: 0 auto;
+	width: 900px;
+}
+#wrapper {
+	background-image: url('images/content-bg.png');
+        background-position: left;
+        background-repeat: repeat-y;
+        background-attachment: fixed
+	margin-top: 0px;
+	padding: 0 0px;
+}
+
+/* Structure the footer area */
+#footer-widget-area {
+	overflow: hidden;
+}
+
+#footer-widget-area .widget-area {
+	float: left;
+	margin-right: 15px;
+	width: 210px;
+}
+
+#footer-widget-area #first {
+	margin-left: 5px;
+}
+
+#site-info {
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	width: 660px;
+}
+
+/* =Global Elements
+-------------------------------------------------------------- */
+
+/* Main global 'theme' and typographic styles */
+
+/* You can override the background image by selecting a background color or custom background image under Appearance/Background. */
+
+body {
+   background-image: url('images/gradientblue-bg.jpg');
+   background-color: aebae6;
+   background-position: left;
+   background-repeat: repeat-x;
+   background-attachment: fixed;  
+}
+
+body,
+input,
+textarea {
+	color: #000;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+input[type="text"],
+textarea {
+	background: #f9f9f9;
+	border: 1px solid #666;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 2px;
+}
+a:link {
+	color: #4c93d5;
+}
+a:visited {
+	color: #4c93d5;
+}
+a:active,
+a:hover {
+	color: #666;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+
+#header {       
+padding: 0px 0 0 0;
+    background: #000;
+}
+#header #access{  /* move menu bar onto header */
+    top: -30px;
+    position: relative;
+}
+
+#site-title {
+    position: absolute;
+    top: 30px; 
+    margin-left: 30px;
+    float: left;
+    font-size: 30px;
+    font-family: 'Dancing Script', arial, serif;
+    width: 660px;
+}
+ 
+#site-title a {
+	color: #ddd;
+        font-family: 'Dancing Script', arial, serif;
+	text-decoration: none;
+}
+#site-description {
+    position:absolute;
+    clear: both;
+    float: left;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Dancing Script', arial, serif;
+    top: 80px; 
+    margin-left: 30px;
+    width: 350px;
+    color: #ddd;
+}
+
+/* This is the custom header image */
+#branding img {
+border-top: 0px solid #000;
+	border-bottom: 0px solid #000;
+	clear: both;
+	display: block;
+}
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+
+#access { /* decrease the height of menu, add box shadow and make it semi transparent */
+    width: 900px;    
+    height:30px;
+    -webkit-box-shadow: 0px 1px 3px #525252;
+    -moz-box-shadow: 0px 1px 3px #525252;
+    box-shadow: 0px 1px 3px #525252;
+    background: rgb(0, 0, 0); /* Fallback for web browsers that don't support RGBa */
+    background: rgba(0, 0, 0, 0.7); /* RGBa does not affect child elements */
+    filter:alpha(opacity=95); /* opacity for IE */
+}
+#access ul ul a,#access li:hover > a,#access ul ul :hover > a {
+    background-color: #000;
+    background: rgb(0, 0, 0); /* Fallback for web browsers that don't support RGBa */
+    background: rgba(0, 0, 0, 0.7); /* RGBa for sub menus */
+}
+#access a { /* brighten the menu links */
+    color:#4c93d5;
+    line-height:30px;
+}
+#access li:hover > a,#access ul ul :hover > a {
+    color: #ddd; /* menu hover link color */
+    background: rgba(8, 8, 8, 0.8);
+}
+#access ul li.current_page_item > a,#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,#access ul li.current-menu-parent > a {
+    color: #ddd; /* current menu link */
+}
+#access ul ul { /* adjust height of dropdown menus */
+    top:30px;
+}
+#access ul ul ul {
+    top:0;
+}
+
+/* =Content
+-------------------------------------------------------------- */
+
+#main {
+	clear: both;
+	overflow: hidden;
+        padding: 0px 0 0;
+}
+#content,
+#content input,
+#content textarea {
+	color: #000;
+	font-size: 14px;
+	line-height: 22px;
+}
+#content p,
+#content ul,
+#content ol,
+#content dd,
+#content pre,
+#content hr {
+	margin-bottom: 22px;
+}
+#content h1 {color:#4c93d5;}
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+	color: #000;
+	line-height: 1.5em;
+	margin: 0 0 20px 0;
+}
+.page-title {
+	color: #666;
+	font-size: 32px;
+	margin: 0 0 36px 0;
+        font-family: 'Dancing Script', arial, serif;
+}
+.page-title span {
+	color: #4c93d5;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: normal;
+        font-family: 'Dancing Script', arial, serif;
+}
+.page-title a:link,
+.page-title a:visited {
+	color: #4c93d5;
+	text-decoration: none;
+        font-family: 'Dancing Script', arial, serif;
+}
+.page-title a:active,
+.page-title a:hover {
+	color: #666;
+}
+#content .entry-title {
+        font-family: 'Dancing Script', arial, serif;	
+        color: #666;
+	font-size: 32px;
+	margin-bottom: 0;
+}
+
+.entry-title a:link,
+.entry-title a:visited {
+	color: #666;
+	text-decoration: none;
+        font-family: 'Dancing Script', arial, serif;	
+}
+.entry-title a:active,
+.entry-title a:hover {
+	color: #4c93d5;
+}
+
+.home .sticky {
+	background: #f3f0dd;
+	border-top: 2px solid #4c93d5;
+	margin-left: 0px;
+	margin-right: -20px;
+	padding: 18px 20px;
+}
+
+/* =Images
+-------------------------------------------------------------- */
+
+#content img {
+	max-width: 500px;
+}
+
+#content .attachment img {
+	max-width: 600px;
+}
+
+#content .wp-caption {
+	padding-bottom: 3px;
+}
+
+
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+.navigation {
+	color: #F3B13F;
+	font-size: 12px;
+	line-height: 18px;
+	overflow: hidden;
+}
+.navigation a:link,
+.navigation a:visited {
+	color: #F3B13F;
+	text-decoration: none;
+}
+.navigation a:active,
+.navigation a:hover {
+	color: #666;
+}
+
+/* =Widget Areas
+-------------------------------------------------------------- */
+
+.widget-area ul ul {
+      list-style: none;	
+      margin-left: 0em;
+}
+.widget-area ul ul li {
+	padding-bottom: 5px;
+        font-size: 13px;
+}
+
+.widget-title {
+	color: #666;
+        font-family: 'Dancing Script', arial, serif;
+        font-size: 24px;
+        padding-bottom: 5px;
+        letter-spacing: 2px;
+}
+.widget-area .entry-meta {
+	font-size: 13px;
+}
+
+/* Main sidebars */
+#main .widget-area ul {
+	margin-left: 0;
+	padding: 0 10px 0 0;
+}
+#main .widget-area ul ul {
+	border: none;
+	margin-left: 0em;
+	padding: 0;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#footer {
+	margin-bottom: 10px;
+}
+#colophon {
+	border-top: 2px solid #4c93d5;
+        background: #f3f0dd;
+	margin-top: 0px;
+	overflow: hidden;
+	padding: 10px 0;
+}
+#site-info {
+	font-weight: bold;
+        margin-left: 10px;
+        width:200px;
+}
+
+}
+#site-info a {
+	color: #7081ff;
+	text-decoration: none;
+}
+#site-generator {
+	font-style: italic;
+	position: relative;
+        width: 550px;
+
+}
+#site-generator a {
+	background: none;
+	color: #666;
+	display: inline-block;
+	line-height: 14px;
+	padding-left: 5px;
+	text-decoration: none;
+        font-size: 13px;
+}

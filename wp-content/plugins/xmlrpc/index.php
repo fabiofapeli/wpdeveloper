@@ -10,7 +10,7 @@
  *
  */
 
-add_action( 'plugins_loaded', 'rc_setup' );
+//add_action( 'plugins_loaded', 'rc_setup' );
 
 function rc_setup()
 {
